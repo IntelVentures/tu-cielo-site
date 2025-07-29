@@ -356,10 +356,10 @@ h1, h2 {
   max-width: 250px;
 }
 
-.payment-estimate-section,
-.how-it-works-section {
+.payment-estimate-section {
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 60px;
   padding: 60px 30px;
   text-align: center;
   border-radius: 20px;
@@ -367,13 +367,21 @@ h1, h2 {
   backdrop-filter: blur(6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 4);
   color: white;
+  border: 6px solid white; /* <-- Added this line */
 }
 
-.how-it-works-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: transparent;
+.how-it-works-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(25, 118, 210, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 4);
+  color: white;
+  
 }
 
 .steps {
@@ -434,6 +442,7 @@ h1, h2 {
 .step-group:last-child .step-line-horizontal {
   display: none;
 }
+
 
 /* Tooltip content box fix (optional if needed) */
 .tooltip-container {

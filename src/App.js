@@ -509,119 +509,49 @@ function Homepage() {
             </div>
           </section>
 
-          {/* ESTIMATE SECTION */}
-          <section className="estimate-wrapper">
+{/* APPLICATION SECTION */}
+          <section id="application-section">
             <div className="payment-estimate-section">
-             <h2>What Could Your Association Payment Look Like?</h2>
-              <div className="payment-breakdown-wrapper">
-                <div className="payment-breakdown">
+              <h2>Click Below to Submit Your Application</h2>
+              
+              {/* Button with Tooltip */}
+                  <div style={{ textAlign: 'center' }}>
+                    <div className="tooltip-container">
+                      <button className="cta-button" onClick={() => setShowApplicationFormModal(true)}>
+                        <strong>Start Application</strong>
+                      </button>
 
-                <img src="/Free_Custom_Estimate_no_background.png" alt="Free Custom Estimate" className="estimate-image"/>
-                              
-                  {/* Modal Trigger */}
-                  <div style={{ textAlign: "center" }}>
-                    <button className="cta-button" onClick={() => setShowLoanCalculatorModal(true)}>
-                      Get Your FREE Custom Estimate
-                    </button>
+                      <div className="tooltip-text">
+                        Before starting please gather the following information:
+                        <ul>
+                          <li>1. HOA legal entity name</li>
+                          <li>2. Number of units</li>
+                          <li>3. Year built of condominium</li>
+                          <li>4. Contact Info</li>
+                          <li>5. Type of project</li>
+                          <li>6. Cost of improvement/Reserves</li>
+                          <li>7. Loan amount needed</li>
+                          <li>8. Average monthly dues per Unit</li>
+                          <li>9. Current reserve fund balance</li>
+                          <li>10. Annual Operating Budget</li>
+                          <li>11. Delinquency Rate Percentage</li>
+                          <li>12. Reserves studies PDF (500MB max)</li>
+                          <li>13. Annual Budget PDF (500MB max)</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-
                   <p className="payment-note">
                     No hammer clause | DSCR included | Fixed-rate periods up to 12.5 years
                   </p>
-
-                  {/* Loan Calculator Modal */}
-                  {showLoanCalculatorModal && (
-                    <div className="modal-overlay">
-                      <div className="modal-content">
-                        <button className="modal-close" onClick={() => {
-                          setShowLoanCalculatorModal(false);
-                          setShowCalculator(false);
-                          setCalculatorLeadForm({ name: '', company: '', email: '' });
-                        }}>×</button>
-
-                       {/* Lead Form or Calculator */}
-                        {!showCalculator ? (
-                          <div>
-                            <h3>Get Your Free Estimate</h3>
-                            <input
-                              type="text"
-                              name="name"
-                              placeholder="Your Name"
-                              value={calculatorLeadForm.name}
-                              onChange={(e) =>
-                                setCalculatorLeadForm({ ...calculatorLeadForm, name: e.target.value })
-                              }
-                            />
-                            <input
-                              type="text"
-                              name="company"
-                              placeholder="Company / Community"
-                              value={calculatorLeadForm.company}
-                              onChange={(e) =>
-                                setCalculatorLeadForm({ ...calculatorLeadForm, company: e.target.value })
-                              }
-                            />
-                            <input
-                              type="email"
-                              name="email"
-                              placeholder="Email"
-                              value={calculatorLeadForm.email}
-                              onChange={(e) =>
-                                setCalculatorLeadForm({ ...calculatorLeadForm, email: e.target.value })
-                              }
-                            />
-                              <label className="checkbox-container">
-                                <input
-                                  type="checkbox"
-                                  checked={agreedToPrivacy}
-                                  onChange={(e) => setAgreedToPrivacy(e.target.checked)}
-                                />
-                                <span>
-                                  I agree to the{' '}
-                                  <button
-                                    type="button"
-                                    className="privacy-link"
-                                    onClick={() => setShowPrivacyModal(true)}
-                                  >
-                                    Privacy & Data Management Policy
-                                  </button>
-                                </span>
-                              </label>
-                                
-                            <button
-                              className="cta-button"
-                              onClick={() => {
-                                // Download the PDF
-                                const link = document.createElement('a');
-                                link.href = '/TuCielo_Program_Guidelines_Legal.pdf';
-                                link.download = 'TuCielo_Program_Guidelines_Legal.pdf';
-                                document.body.appendChild(link);
-                                link.click();
-                                document.body.removeChild(link);
-
-                                // Show the calculator
-                                setShowCalculator(true);
-                              }}
-                              disabled={
-                                !calculatorLeadForm.name.trim() ||
-                                !calculatorLeadForm.company.trim() ||
-                                !calculatorLeadForm.email.trim() ||
-                                !calculatorLeadForm.agreedToPrivacy
-                                }
-                                style={{ opacity: agreedToPrivacy ? 1 : 0.6, cursor: agreedToPrivacy ? 'pointer' : 'not-allowed' }}
-                            >
-                              Submit
-                            </button>
-                          </div>
-                        ) : (
-                          <LoanCalculator />
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
+
+                  {/* Application Form Modal */}
+                  {showApplicationFormModal && (
+                    <TuCieloHOALoanApplication onClose={() => setShowApplicationFormModal(false)} /> 
+                  )}
+                  
+
           </section>
 
 
@@ -656,51 +586,7 @@ function Homepage() {
             </div>
           </section>
 
-
-          {/* APPLICATION SECTION */}
-          <section id="application-section">
-            <div className="payment-estimate-section">
-              <h2>Click Below to Submit Your Application</h2>
-              
-              {/* Button with Tooltip */}
-                  <div style={{ textAlign: 'center' }}>
-                    <div className="tooltip-container">
-                      <button className="cta-button" onClick={() => setShowApplicationFormModal(true)}>
-                        <strong>Start Application</strong>
-                      </button>
-
-                      <div className="tooltip-text">
-                        Before starting please gather the following information:
-                        <ul>
-                          <li>1. HOA legal entity name</li>
-                          <li>2. Number of units</li>
-                          <li>3. Year built of condominium</li>
-                          <li>4. Contact Info</li>
-                          <li>5. Type of project</li>
-                          <li>6. Cost of improvement/Reserves</li>
-                          <li>7. Loan amount needed</li>
-                          <li>8. Average monthly dues per Unit</li>
-                          <li>9. Current reserve fund balance</li>
-                          <li>10. Annual Operating Budget</li>
-                          <li>11. Delinquency Rate Percentage</li>
-                          <li>12. Reserves studies PDF (500MB max)</li>
-                          <li>13. Annual Budget PDF (500MB max)</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-
-                  {/* Application Form Modal */}
-                  {showApplicationFormModal && (
-                    <TuCieloHOALoanApplication onClose={() => setShowApplicationFormModal(false)} /> 
-                  )}
-
-          </section>
-
-
-
-          {/* CONTACT FORM */}
+         {/* CONTACT FORM */}
           <section id="contact-section" className="contact-form">
             <div className="section-wrapper">
               <div className="form-container">

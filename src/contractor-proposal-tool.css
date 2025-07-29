@@ -63,15 +63,22 @@
 
 /* Buttons */
 .contractor-proposal-tool button {
-  background: none;
-  border: none;
-  color: white;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: 'Mulish', sans-serif;
-  padding: 10px 0;
-  transition: color 0.3s ease;
+ display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 2);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 0;
 }
 
 .contractor-proposal-tool button:hover,

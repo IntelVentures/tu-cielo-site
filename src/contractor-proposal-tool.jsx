@@ -351,6 +351,38 @@ function TuCieloCalculator() {
       >
         Back to TuCielo
       </button>     
+    
+    {/* ESTIMATE SECTION */}
+      <section className="estimate-wrapper">
+        <div className="payment-estimate-section">
+          <h2>What Could Your Association Payment Look Like?</h2>
+          <div className="payment-breakdown-wrapper">
+            <div className="payment-breakdown">
+
+              <img
+                src="/Free_Custom_Estimate_no_background.png"
+                alt="Free Custom Estimate"
+                className="estimate-image"
+              />
+
+              {/* Static Button – now non-functional */}
+              <div style={{ textAlign: "center" }}>
+                <button className="cta-button" disabled>
+                  Get Your FREE Custom Estimate
+                </button>
+              </div>
+
+              <p className="payment-note">
+                No hammer clause | DSCR included | Fixed-rate periods up to 12.5 years
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </section>
+  
     </div>
+
+    
   );
 }
