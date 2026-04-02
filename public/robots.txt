@@ -1,3 +1,15 @@
-# https://www.robotstxt.org/robotstxt.html
+# TuCielo HOA Financing - robots.txt
+# This file tells search engines which pages they can and cannot crawl
+
+# Allow all search engines to crawl the site
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow crawling of API routes (they're not meant for search engines)
+Disallow: /api/
+
+# Sitemap location (helps search engines find all your pages)
+Sitemap: https://tucielofinancing.com/sitemap.xml
+
+# Optional: Crawl delay (be nice to your server)
+Crawl-delay: 1

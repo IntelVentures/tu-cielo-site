@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://tucielofinancing.com/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Calculator Page - High Priority (Lead Generation) -->
+  <url>
+    <loc>https://tucielofinancing.com/Calculator</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- FAQ Page - High Priority (SEO Value) -->
+  <url>
+    <loc>https://tucielofinancing.com/FAQ</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Landing Page -->
+  <url>
+    <loc>https://tucielofinancing.com/Blog</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Affiliate Registration -->
+  <url>
+    <loc>https://tucielofinancing.com/affiliate-registration</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Referral Registration -->
+  <url>
+    <loc>https://tucielofinancing.com/referral-registration</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

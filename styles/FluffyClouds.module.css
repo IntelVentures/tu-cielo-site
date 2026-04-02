@@ -1,0 +1,21 @@
+/* styles/FluffyClouds.module.css */
+.cloudBackground {
+  /* ✅ Optimized lightweight cloud-like gradient (replaces 4MB image!) */
+  background: linear-gradient(
+    225deg,
+    #e3f2fd 0%,
+    #bbdefb 15%,
+    #90caf9 30%,
+    #64b5f6 45%,
+    #42a5f5 60%,
+    #64b5f6 75%,
+    #90caf9 90%,
+    #bbdefb 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  flex-direction: column;
+}

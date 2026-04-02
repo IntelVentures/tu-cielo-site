@@ -1,0 +1,281 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Features Section
+   Full 100vw breakout — content stays within tc-wrap.
+   mask-image gradient fades the frosted background in at the top and out
+   at the bottom so it blends seamlessly with the sky on both sides.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Full-width breakout + fade mask ── */
+.featuresSection {
+  /* Break out of any max-width container to span full viewport */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  /* Prevent the breakout from causing horizontal scroll on mobile */
+  overflow-x: clip;
+
+  /* Fade in at top (0→12%), hold (12→88%), fade out at bottom (88→100%) */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+
+/* ── Section header — split layout (IV2.0 CoreThesis pattern) ── */
+.sectionHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(25, 118, 210, 0.12);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  margin-top: 0.75rem;
+}
+
+.headerIntro {
+  max-width: 480px;
+  padding-bottom: 0.5rem;
+}
+
+/* ── Two-column content grid ── */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left column */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+/* Insights CTA — size to content only, centered on mobile */
+.insightsBtn {
+  align-self: flex-start;
+}
+
+.imageWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.imageCaption {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--tc-text-mid);
+}
+
+/* Right column */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.problemBlock,
+.tableBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.blockTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tc-text-dark);
+  line-height: 1.35;
+}
+
+/* Feature list */
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0;
+  list-style: none;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.95rem;
+  color: var(--tc-text-mid);
+  line-height: 1.65;
+}
+
+.featureList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--tc-blue-500);
+  font-weight: 700;
+}
+
+.tucieloCallout {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tc-blue-600);
+}
+
+/* ── Comparison table — data element, clean white surface ── */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
+  border: 1px solid var(--tc-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.compTable {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.compTable thead tr {
+  background: rgba(25, 118, 210, 0.06);
+  border-bottom: 1px solid var(--tc-border);
+}
+
+.compTable th {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tc-blue-600);
+}
+
+.compTable td {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--tc-text-mid);
+  border-bottom: 1px solid rgba(25, 118, 210, 0.07);
+}
+
+.compTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compTable tbody tr:hover {
+  background: rgba(25, 118, 210, 0.025);
+}
+
+.tcCell {
+  color: var(--tc-blue-600);
+  font-weight: 600;
+}
+
+.iconCell {
+  text-align: center;
+}
+
+.checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--tc-blue-500);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.cross {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(211, 47, 47, 0.10);
+  color: #d32f2f;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.tableNote {
+  font-size: 0.78rem;
+  color: var(--tc-text-muted);
+  font-style: italic;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .featuresSection {
+    /* Keep full-width breakout — just clip overflow to prevent horizontal scroll */
+    overflow-x: clip;
+    /* Keep mask-image fade — it still blends with the sky on mobile */
+  }
+
+  .sectionHeader {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .headerIntro {
+    max-width: 100%;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .blockTitle {
+    font-size: 1rem;
+  }
+
+  .featureList li {
+    font-size: 0.9rem;
+  }
+
+  .imageCaption {
+    font-size: 0.9rem;
+  }
+
+  .insightsBtn {
+    align-self: center;
+  }
+
+  .compTable {
+    min-width: 100%;
+  }
+
+  .compTable th,
+  .compTable td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.82rem;
+  }
+}

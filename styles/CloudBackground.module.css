@@ -1,0 +1,16 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   CloudBackground — scroll-driven radial-gradient clouds.
+   No CSS animations. All movement via JS scroll → requestAnimationFrame.
+   Each cloud div's background is set inline (unique puff arrangement).
+   The only shared CSS is the fixed container layer.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.cloudLayer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}

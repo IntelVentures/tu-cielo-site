@@ -1,0 +1,196 @@
+/* Modal container */
+.hoaModal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* darker overlay */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content wrapper */
+.hoaModalContent {
+  background-color: rgba(255, 255, 255, 0.15); /* glassmorphism */
+  border: 2px solid white;
+  border-radius: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 90%;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 32px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Close button */
+.hoaCloseButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.hoaCloseButton:hover {
+  transform: scale(1.2);
+}
+
+/* Main form wrapper */
+.hoaFormWrapper {
+  padding: 24px;
+  font-family: 'Mulish', sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Section headers */
+.hoaFormWrapper h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.hoaFormWrapper h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Mulish', sans-serif;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #000;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.6);
+  outline: none;
+}
+
+/* File input */
+.inputFile {
+  display: block;
+  margin-bottom: 16px;
+  font-family: 'Mulish', sans-serif;
+  color: white;
+}
+
+/* Submit button */
+.hoaSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 50%;
+}
+
+.hoaSubmitBtn:hover:enabled {
+  background-color: white;
+  color: #125ea8;
+  border: 2px solid #125ea8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hoaSubmitBtn:disabled {
+  background-color: #d1d5db;
+  border: 2px solid #d1d5db;
+  color: #808080;
+  cursor: not-allowed;
+}
+
+/* Navigation button styles */
+.hoaNavBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background-color: #1976d2;
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 8px;
+}
+
+.hoaNavBtn:hover:enabled {
+  background-color: white;
+  color: #125ea8;
+  border: 2px solid #125ea8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hoaNavBtn:disabled {
+  background-color: #d1d5db;
+  border: 2px solid #d1d5db;
+  color: #808080;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Confirmation layout FIX
+========================= */
+
+.hoaConfirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* hard center */
+  text-align: center;
+  width: 100%;
+}
+
+.hoaConfirmation p {
+  margin-bottom: 2rem;   /* spacing from button */
+}
+
+/* Override nav button margins ONLY in confirmation */
+.hoaConfirmation .hoaNavBtn {
+  margin: 0;             /* kills left bias */
+}
+
+
+/* Controls wrapper */
+.stepControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}

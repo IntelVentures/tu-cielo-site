@@ -1,0 +1,300 @@
+.:
+total 256
+drwxrwxrwx+   9 codespace root        4096 Feb  6 19:37 .
+drwxr-xrwx+   5 codespace root        4096 Feb  6 19:34 ..
+-rw-rw-rw-    1 codespace root        1900 Feb  6 19:33 README.md
+drwxrwxrwx+   2 codespace root        4096 Feb  6 19:33 components
+-rw-rw-rw-    1 codespace root         393 Feb  6 19:33 eslint.config.mjs
+-rw-rw-rw-    1 codespace root      187914 Feb  6 19:35 package-lock.json
+-rw-rw-rw-    1 codespace root         470 Feb  6 19:33 package.json
+drwxrwxrwx+   3 codespace root        4096 Feb  6 19:33 pages
+drwxrwxrwx+   2 codespace root        4096 Feb  6 19:33 public
+-rw-rw-rw-    1 codespace codespace      0 Feb  6 19:37 repo_structure.txt
+drwxrwxrwx+   2 codespace root        4096 Feb  6 19:33 styles
+-rw-rw-rw-    1 codespace root         515 Feb  6 19:33 tsconfig.json
+
+total 60
+drwxrwxrwx+ 8 codespace root      4096 Feb  6 19:35 .
+drwxrwxrwx+ 9 codespace root      4096 Feb  6 19:37 ..
+-rw-rw-rw-  1 codespace root       275 Feb  6 19:35 FETCH_HEAD
+-rw-rw-rw-  1 codespace root        21 Feb  6 19:33 HEAD
+-rw-rw-rw-  1 codespace codespace  307 Feb  6 19:35 config
+-rw-rw-rw-  1 codespace root        73 Feb  6 19:33 description
+drwxrwxrwx+ 2 codespace root      4096 Feb  6 19:35 hooks
+-rw-rw-rw-  1 codespace root      6937 Feb  6 19:33 index
+drwxrwxrwx+ 2 codespace root      4096 Feb  6 19:33 info
+drwxr-xr-x+ 3 codespace codespace 4096 Feb  6 19:35 lfs
+drwxrwxrwx+ 3 codespace root      4096 Feb  6 19:33 logs
+drwxrwxrwx+ 4 codespace root      4096 Feb  6 19:35 objects
+-rw-rw-rw-  1 codespace root       112 Feb  6 19:33 packed-refs
+drwxrwxrwx+ 5 codespace root      4096 Feb  6 19:35 refs
+
+total 88
+drwxrwxrwx+ 2 codespace root      4096 Feb  6 19:35 .
+drwxrwxrwx+ 8 codespace root      4096 Feb  6 19:35 ..
+-rwxrwxrwx  1 codespace root       478 Feb  6 19:33 applypatch-msg.sample
+-rwxrwxrwx  1 codespace root       896 Feb  6 19:33 commit-msg.sample
+-rwxrwxrwx  1 codespace root      4726 Feb  6 19:33 fsmonitor-watchman.sample
+-rwxr-xr-x  1 codespace codespace  360 Feb  6 19:35 post-checkout
+-rwxr-xr-x  1 codespace codespace  356 Feb  6 19:35 post-commit
+-rwxr-xr-x  1 codespace codespace  354 Feb  6 19:35 post-merge
+-rwxrwxrwx  1 codespace root       189 Feb  6 19:33 post-update.sample
+-rwxrwxrwx  1 codespace root       424 Feb  6 19:33 pre-applypatch.sample
+-rwxrwxrwx  1 codespace root      1649 Feb  6 19:33 pre-commit.sample
+-rwxrwxrwx  1 codespace root       416 Feb  6 19:33 pre-merge-commit.sample
+-rwxr-xr-x  1 codespace codespace  350 Feb  6 19:35 pre-push
+-rwxrwxrwx  1 codespace root      1374 Feb  6 19:33 pre-push.sample
+-rwxrwxrwx  1 codespace root      4898 Feb  6 19:33 pre-rebase.sample
+-rwxrwxrwx  1 codespace root       544 Feb  6 19:33 pre-receive.sample
+-rwxrwxrwx  1 codespace root      1492 Feb  6 19:33 prepare-commit-msg.sample
+-rwxrwxrwx  1 codespace root      2783 Feb  6 19:33 push-to-checkout.sample
+-rwxrwxrwx  1 codespace root      2308 Feb  6 19:33 sendemail-validate.sample
+-rwxrwxrwx  1 codespace root      3650 Feb  6 19:33 update.sample
+
+total 12
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 8 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root  240 Feb  6 19:33 exclude
+
+total 12
+drwxr-xr-x+ 3 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 8 codespace root      4096 Feb  6 19:35 ..
+drwxr-xr-x+ 2 codespace codespace 4096 Feb  6 19:35 tmp
+
+total 8
+drwxr-xr-x+ 2 codespace codespace 4096 Feb  6 19:35 .
+drwxr-xr-x+ 3 codespace codespace 4096 Feb  6 19:35 ..
+
+total 16
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 8 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root  264 Feb  6 19:33 HEAD
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 refs
+
+total 16
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:33 ..
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 heads
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 remotes
+
+total 12
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root  264 Feb  6 19:33 main
+
+total 12
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 origin
+
+total 16
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root  206 Feb  6 19:35 HEAD
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:35 vercel
+
+total 12
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root  239 Feb  6 19:35 react-server-components-cve-vu-49po5f
+
+total 16
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 8 codespace root 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 info
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:35 pack
+
+total 8
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 4 codespace root 4096 Feb  6 19:35 ..
+
+total 6092
+drwxrwxrwx+ 2 codespace root    4096 Feb  6 19:35 .
+drwxrwxrwx+ 4 codespace root    4096 Feb  6 19:35 ..
+-r--r--r--  1 codespace root    4992 Feb  6 19:35 pack-0b9ab90c8b799e3bbde51394c5fe2b1bf0b1ebba.idx
+-r--r--r--  1 codespace root  111576 Feb  6 19:35 pack-0b9ab90c8b799e3bbde51394c5fe2b1bf0b1ebba.pack
+-r--r--r--  1 codespace root     612 Feb  6 19:35 pack-0b9ab90c8b799e3bbde51394c5fe2b1bf0b1ebba.rev
+-r--r--r--  1 codespace root    3340 Feb  6 19:33 pack-9f7ce33e479c6ab944fd4c1b6228d14c38bf9dec.idx
+-r--r--r--  1 codespace root 6091875 Feb  6 19:33 pack-9f7ce33e479c6ab944fd4c1b6228d14c38bf9dec.pack
+-r--r--r--  1 codespace root     376 Feb  6 19:33 pack-9f7ce33e479c6ab944fd4c1b6228d14c38bf9dec.rev
+
+total 20
+drwxrwxrwx+ 5 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 8 codespace root 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 heads
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 remotes
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 tags
+
+total 12
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 5 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root   41 Feb  6 19:33 main
+
+total 12
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace root 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 origin
+
+total 16
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root   30 Feb  6 19:35 HEAD
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:35 vercel
+
+total 12
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace root 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace root   41 Feb  6 19:35 react-server-components-cve-vu-49po5f
+
+total 8
+drwxrwxrwx+ 2 codespace root 4096 Feb  6 19:33 .
+drwxrwxrwx+ 5 codespace root 4096 Feb  6 19:35 ..
+
+total 296
+drwxrwxrwx+ 6 codespace codespace   4096 Feb  6 19:35 .
+drwxrwxrwx+ 9 codespace root        4096 Feb  6 19:37 ..
+-rw-rw-rw-  1 codespace codespace     21 Feb  6 19:35 BUILD_ID
+-rw-rw-rw-  1 codespace codespace   2948 Feb  6 19:35 build-manifest.json
+drwxrwxrwx+ 5 codespace codespace   4096 Feb  6 19:35 cache
+drwxrwxrwx+ 2 codespace codespace   4096 Feb  6 19:35 diagnostics
+-rw-rw-rw-  1 codespace codespace      2 Feb  6 19:35 dynamic-css-manifest.json
+-rw-rw-rw-  1 codespace codespace    110 Feb  6 19:35 export-marker.json
+-rw-rw-rw-  1 codespace codespace    868 Feb  6 19:35 images-manifest.json
+-rw-rw-rw-  1 codespace codespace     20 Feb  6 19:35 package.json
+-rw-rw-rw-  1 codespace codespace    354 Feb  6 19:35 prerender-manifest.json
+-rw-rw-rw-  1 codespace codespace      2 Feb  6 19:35 react-loadable-manifest.json
+-rw-rw-rw-  1 codespace codespace   8803 Feb  6 19:35 required-server-files.json
+-rw-rw-rw-  1 codespace codespace   1931 Feb  6 19:35 routes-manifest.json
+drwxrwxrwx+ 4 codespace codespace   4096 Feb  6 19:35 server
+drwxrwxrwx+ 5 codespace codespace   4096 Feb  6 19:35 static
+-rw-rw-rw-  1 codespace codespace 179853 Feb  6 19:35 trace
+
+total 128
+drwxrwxrwx+ 5 codespace codespace   4096 Feb  6 19:35 .
+drwxrwxrwx+ 6 codespace codespace   4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 105187 Feb  6 19:35 .tsbuildinfo
+-rw-rw-rw-  1 codespace codespace    185 Feb  6 19:35 config.json
+drwxrwxrwx+ 2 codespace codespace   4096 Feb  6 19:35 eslint
+drwxrwxrwx+ 3 codespace codespace   4096 Feb  6 19:35 swc
+drwxrwxrwx+ 5 codespace codespace   4096 Feb  6 19:35 webpack
+
+total 20
+drwxrwxrwx+ 2 codespace codespace  4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace  4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 11200 Feb  6 19:35 .cache_jtba4l
+
+total 12
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 plugins
+
+total 12
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 v7_linux_x86_64_17.0.0
+
+total 8
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 ..
+
+total 20
+drwxrwxrwx+ 5 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 client-production
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 edge-server-production
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 server-production
+
+total 14300
+drwxrwxrwx+ 2 codespace codespace     4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace     4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 13789404 Feb  6 19:35 0.pack
+-rw-rw-rw-  1 codespace codespace   843454 Feb  6 19:35 index.pack
+
+total 16
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace  276 Feb  6 19:35 0.pack
+-rw-rw-rw-  1 codespace codespace 2509 Feb  6 19:35 index.pack
+
+total 14188
+drwxrwxrwx+ 2 codespace codespace     4096 Feb  6 19:35 .
+drwxrwxrwx+ 5 codespace codespace     4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 13994873 Feb  6 19:35 0.pack
+-rw-rw-rw-  1 codespace codespace   522213 Feb  6 19:35 index.pack
+
+total 16
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 6 codespace codespace 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace   93 Feb  6 19:35 build-diagnostics.json
+-rw-rw-rw-  1 codespace codespace   38 Feb  6 19:35 framework.json
+
+total 60
+drwxrwxrwx+ 4 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 6 codespace codespace 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 chunks
+-rw-rw-rw-  1 codespace codespace   33 Feb  6 19:35 dynamic-css-manifest.js
+-rw-rw-rw-  1 codespace codespace   37 Feb  6 19:35 functions-config-manifest.json
+-rw-rw-rw-  1 codespace codespace   48 Feb  6 19:35 interception-route-rewrite-manifest.js
+-rw-rw-rw-  1 codespace codespace 2551 Feb  6 19:35 middleware-build-manifest.js
+-rw-rw-rw-  1 codespace codespace   83 Feb  6 19:35 middleware-manifest.json
+-rw-rw-rw-  1 codespace codespace   36 Feb  6 19:35 middleware-react-loadable-manifest.js
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 pages
+-rw-rw-rw-  1 codespace codespace  591 Feb  6 19:35 pages-manifest.json
+-rw-rw-rw-  1 codespace codespace  954 Feb  6 19:35 webpack-api-runtime.js
+-rw-rw-rw-  1 codespace codespace 1027 Feb  6 19:35 webpack-runtime.js
+
+total 260
+drwxrwxrwx+ 2 codespace codespace  4096 Feb  6 19:35 .
+drwxrwxrwx+ 4 codespace codespace  4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 45806 Feb  6 19:35 169.js
+-rw-rw-rw-  1 codespace codespace 68867 Feb  6 19:35 341.js
+-rw-rw-rw-  1 codespace codespace 11100 Feb  6 19:35 396.js
+-rw-rw-rw-  1 codespace codespace 53505 Feb  6 19:35 64.js
+-rw-rw-rw-  1 codespace codespace 65799 Feb  6 19:35 705.js
+
+total 144
+drwxrwxrwx+ 3 codespace codespace  4096 Feb  6 19:35 .
+drwxrwxrwx+ 4 codespace codespace  4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace  2191 Feb  6 19:35 404.html
+-rw-rw-rw-  1 codespace codespace  2177 Feb  6 19:35 500.html
+-rw-rw-rw-  1 codespace codespace 13161 Feb  6 19:35 Blog.html
+-rw-rw-rw-  1 codespace codespace   146 Feb  6 19:35 Blog.js.nft.json
+-rw-rw-rw-  1 codespace codespace  7073 Feb  6 19:35 Calculator.html
+-rw-rw-rw-  1 codespace codespace   146 Feb  6 19:35 Calculator.js.nft.json
+-rw-rw-rw-  1 codespace codespace  6172 Feb  6 19:35 FAQ.html
+-rw-rw-rw-  1 codespace codespace   146 Feb  6 19:35 FAQ.js.nft.json
+-rw-rw-rw-  1 codespace codespace   352 Feb  6 19:35 _app.js
+-rw-rw-rw-  1 codespace codespace   486 Feb  6 19:35 _app.js.nft.json
+-rw-rw-rw-  1 codespace codespace   601 Feb  6 19:35 _document.js
+-rw-rw-rw-  1 codespace codespace  3589 Feb  6 19:35 _document.js.nft.json
+-rw-rw-rw-  1 codespace codespace 17556 Feb  6 19:35 _error.js
+-rw-rw-rw-  1 codespace codespace  4551 Feb  6 19:35 _error.js.nft.json
+-rw-rw-rw-  1 codespace codespace  3278 Feb  6 19:35 affiliate-registration.html
+-rw-rw-rw-  1 codespace codespace   108 Feb  6 19:35 affiliate-registration.js.nft.json
+drwxrwxrwx+ 2 codespace codespace  4096 Feb  6 19:35 api
+-rw-rw-rw-  1 codespace codespace 11681 Feb  6 19:35 index.html
+-rw-rw-rw-  1 codespace codespace  4613 Feb  6 19:35 index.js.nft.json
+-rw-rw-rw-  1 codespace codespace  3228 Feb  6 19:35 referral-registration.html
+-rw-rw-rw-  1 codespace codespace   108 Feb  6 19:35 referral-registration.js.nft.json
+
+total 40
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 ..
+-rw-rw-rw-  1 codespace codespace 2149 Feb  6 19:35 hello.js
+-rw-rw-rw-  1 codespace codespace 2524 Feb  6 19:35 hello.js.nft.json
+-rw-rw-rw-  1 codespace codespace 2993 Feb  6 19:35 submit-hoa-form.js
+-rw-rw-rw-  1 codespace codespace 2524 Feb  6 19:35 submit-hoa-form.js.nft.json
+-rw-rw-rw-  1 codespace codespace 3035 Feb  6 19:35 submitContactForm.js
+-rw-rw-rw-  1 codespace codespace 2524 Feb  6 19:35 submitContactForm.js.nft.json
+-rw-rw-rw-  1 codespace codespace 2675 Feb  6 19:35 submitForm.js
+-rw-rw-rw-  1 codespace codespace 2524 Feb  6 19:35 submitForm.js.nft.json
+
+total 20
+drwxrwxrwx+ 5 codespace codespace 4096 Feb  6 19:35 .
+drwxrwxrwx+ 6 codespace codespace 4096 Feb  6 19:35 ..
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 a-us4QD8rSLmaRqdFuHq_
+drwxrwxrwx+ 3 codespace codespace 4096 Feb  6 19:35 chunks
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 css
+
+total 16
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  6 19:35 .

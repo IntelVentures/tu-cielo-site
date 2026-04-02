@@ -1,0 +1,301 @@
+.prequalSection {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+}
+
+.prequalContainer {
+  width: 100%;
+  max-width: 900px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.formGrid {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  font-family: var(--font-main);
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #1a1a1a;
+}
+
+/* ---------- FIELD LABELS ---------- */
+.fieldLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.3rem;
+}
+
+.required {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+.requiredNote {
+  font-size: 0.82rem;
+  color: #555;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- ERROR BANNER ---------- */
+.errorBanner {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- ROW LAYOUT ---------- */
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ---------- INPUTS ---------- */
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #dcdcdc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: white;
+  color: #1a1a1a;
+  transition: var(--transition);
+  font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+/* FIX: Restore visible focus indicator – do NOT use outline:none */
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 116, 204, 0.25);
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- TEXTAREA ---------- */
+.textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* ---------- RADIO GROUP ---------- */
+.radioGroup {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  background: #f8fafc;
+}
+
+.radioTitle {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  padding: 0;
+  border: none;
+}
+
+.radioOption {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.radioOption input {
+  margin-right: 6px;
+  accent-color: var(--accent);
+  outline-offset: 2px;
+}
+
+.radioOption input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.submitBtn:hover:enabled {
+  background-color: #005fa3;
+}
+
+/* FIX: Explicit text color on disabled state for sufficient contrast */
+.submitBtn:disabled {
+  background-color: #cbd5e1;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+.submitBtn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(0, 116, 204, 0.2);
+}
+
+/* ---------- MODAL ---------- */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.modal {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #1a1a1a;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.closeBtn {
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--accent);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.closeBtn:hover {
+  background-color: #005fa3;
+}
+
+.closeBtn:focus-visible {
+  outline: 3px solid #003d7a;
+  outline-offset: 3px;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FIX: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .modalOverlay {
+    animation: none;
+  }
+  .modal {
+    animation: none;
+  }
+}
+
+/* ---------- MEDIA QUERY ---------- */
+@media (max-width: 768px) {
+  .prequalSection {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block;
+  }
+
+  .prequalContainer {
+    width: 100%;
+    max-width: 900px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .formGrid {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .input {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .radioGroup {
+    padding: 0.75rem;
+  }
+
+  .radioOption {
+    display: flex;
+    margin-right: 0;
+    margin-bottom: 0.6rem;
+  }
+
+  .submitBtn {
+    font-size: 0.95rem;
+    padding: 13px;
+  }
+}

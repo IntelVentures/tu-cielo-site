@@ -1,0 +1,286 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Hero Section — IV2.0 split layout
+   Left: copy (eyebrow, h1, sub, CTAs, trust)
+   Right: 2×2 stat card grid
+   ───────────────────────────────────────────────────────────────────────── */
+
+.heroSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* padding drives the spacing — no min-height dead zone */
+  padding: 3rem 1.5rem 2.5rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Atmospheric glow orb ── */
+.heroGlow {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 800px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(144, 202, 249, 0.30) 0%,
+    rgba(187, 222, 251, 0.15) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Split layout wrapper ── */
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1140px;
+  width: 100%;
+}
+
+/* ── Left: copy ── */
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ── Eyebrow pill ── */
+.heroEyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tc-blue-500);
+  margin-bottom: 1.25rem;
+  background: rgba(25, 118, 210, 0.10);
+  border: 1px solid rgba(25, 118, 210, 0.22);
+  padding: 6px 18px;
+  border-radius: 100px;
+}
+
+/* ── Headline ── */
+.heroHeadline {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  line-height: 1.10;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+.heroAccent {
+  color: var(--tc-blue-500);
+}
+
+/* ── Sub-headline ── */
+.heroSub {
+  font-size: 1.05rem;
+  color: #3a5070;
+  max-width: 480px;
+  margin: 0 0 2.25rem;
+  line-height: 1.75;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* ── CTA buttons ── */
+.heroCTAs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.ctaPrimary {
+  background: var(--tc-cta);
+  color: #fff;
+  border: 2px solid var(--tc-cta);
+  border-radius: var(--radius);
+  padding: 0.9rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 18px rgba(40, 167, 69, 0.28);
+  white-space: nowrap;
+}
+
+.ctaPrimary:hover {
+  background: var(--tc-cta-dark);
+  border-color: var(--tc-cta-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(40, 167, 69, 0.40);
+  text-decoration: none;
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--tc-blue-600);
+  border: 2px solid rgba(25, 118, 210, 0.40);
+  border-radius: var(--radius);
+  padding: 0.9rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.ctaSecondary:hover {
+  background: var(--tc-blue-500);
+  border-color: var(--tc-blue-500);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.28);
+  text-decoration: none;
+}
+
+/* ── Trust signal ── */
+.heroTrust {
+  font-size: 0.78rem;
+  color: #7090b0;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+/* ── Right: stats grid ── */
+.heroRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Individual stat card */
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.5rem 1.5rem 1.35rem;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(25, 118, 210, 0.14);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px rgba(13, 71, 161, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(13, 71, 161, 0.13);
+}
+
+.statValue {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--tc-blue-600);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.68rem;
+  color: #6080a0;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .heroLeft {
+    align-items: center;
+  }
+
+  .heroHeadline,
+  .heroSub {
+    text-align: center;
+  }
+
+  .heroRight {
+    justify-content: center;
+  }
+
+  .statsGrid {
+    max-width: 380px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .heroSection {
+    padding: 2.5rem 1.25rem 3.5rem;
+  }
+
+  .heroGlow {
+    width: 420px;
+    height: 300px;
+  }
+
+  .heroHeadline {
+    font-size: 2.1rem;
+  }
+
+  .heroSub {
+    font-size: 0.975rem;
+  }
+
+  .heroCTAs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  .statCard {
+    padding: 1.1rem 1rem;
+  }
+
+  .statValue {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

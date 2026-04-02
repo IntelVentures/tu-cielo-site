@@ -1,0 +1,131 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Footer
+   Deep navy — IV2.0 footer pattern adapted to TuCielo.
+   Dark base anchors the page and creates premium contrast at the bottom.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.footer {
+  background: #1975E3;
+  padding: 4rem 2.5rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Top fade — footer colour rises from the page above ── */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -52px;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: linear-gradient(to top, #1975E3, transparent);
+  pointer-events: none;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.brandTagline {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.06em;
+}
+
+.footerNav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.50);
+  cursor: pointer;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin-bottom: 1.75rem;
+}
+
+.footerBottom {
+  margin-bottom: 1.5rem;
+}
+
+.copyright {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.disclaimer {
+  font-size: 0.72rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.26);
+  max-width: 900px;
+}
+
+@media (max-width: 700px) {
+  .footerTop {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footerNav {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .brandName {
+    font-size: 1.25rem;
+  }
+
+  .footerNav {
+    gap: 0.85rem;
+  }
+
+  .navLink {
+    font-size: 0.82rem;
+  }
+
+  .disclaimer {
+    font-size: 0.68rem;
+  }
+}

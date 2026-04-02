@@ -1,0 +1,260 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Header — same deep navy as footer (--tc-blue-700).
+   Always dark — white logo/sticker always legible. No color flip on scroll.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.skipLink {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--tc-blue-500);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: top 0.1s;
+}
+.skipLink:focus { top: 1rem; }
+
+/* ── Site header ── */
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #1975E3;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Scrolled: subtle shadow */
+.scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.20);
+}
+
+/* ── Bottom fade — header colour dissolves into the page below ── */
+.siteHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -52px;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: linear-gradient(to bottom, #1975E3, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Single-row inner ── */
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 68px;
+  gap: 2rem;
+}
+
+/* ── Logo area ── */
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+/* Logo: white PNG always on deep navy — always legible, no filter needed */
+.logoImg {
+  display: block;
+  width: auto;
+  height: 42px;
+}
+
+/* Beta sticker: white PNG, always on navy */
+.betaSticker {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Desktop nav links ── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+/* All nav links: uniform ghost style */
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+/* ── Primary CTA ── */
+.navCta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tc-cta);
+  border: none;
+  padding: 0.55rem 1.35rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 10px rgba(40, 167, 69, 0.30);
+}
+
+.navCta:hover {
+  background: var(--tc-cta-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.40);
+}
+
+/* ── Hamburger (mobile only) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s, background 0.35s;
+}
+
+/* Header is always #1975E3 — bars stay white regardless of scroll state */
+
+/* Animated X when open */
+.hamburgerOpen .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburgerOpen .bar:nth-child(2) { opacity: 0; }
+.hamburgerOpen .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile nav drawer ── */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(25, 118, 210, 0.12);
+  box-shadow: -4px 0 28px rgba(13, 27, 42, 0.16);
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem 2rem;
+  gap: 0.25rem;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.mobileNavOpen {
+  right: 0;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--tc-text-mid);
+  background: transparent;
+  border: none;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  text-align: left;
+}
+
+.mobileLink:hover {
+  background: rgba(25, 118, 210, 0.07);
+  color: var(--tc-blue-600);
+}
+
+.mobileCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--tc-cta);
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.mobileCta:hover {
+  background: var(--tc-cta-dark);
+}
+
+/* ── Responsive breakpoint ── */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .headerInner {
+    padding: 0 1.25rem;
+    height: 60px;
+  }
+
+  .logoImg {
+    height: 34px;
+  }
+}

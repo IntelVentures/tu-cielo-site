@@ -1,0 +1,99 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   EstimateSection — IV2.0 treatment
+   Frosted card inside the calculator page, image + disabled CTA.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.estimateWrapper {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 1.5rem;
+}
+
+.paymentEstimateSection {
+  width: 100%;
+  text-align: center;
+}
+
+.paymentBreakdownWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.paymentBreakdown {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(25, 118, 210, 0.14);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 2rem 1.5rem;
+}
+
+.paymentBreakdown h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.estimateImage {
+  max-width: 40%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.25rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  background: var(--tc-cta);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  opacity: 0.5;
+  cursor: not-allowed;
+  margin-bottom: 0.75rem;
+}
+
+.paymentNote {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--tc-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .estimateImage {
+    max-width: 65%;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .paymentBreakdown {
+    padding: 1.5rem 1rem;
+  }
+
+  .estimateImage {
+    max-width: 85%;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.25rem;
+  }
+}

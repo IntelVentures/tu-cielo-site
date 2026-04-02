@@ -1,0 +1,61 @@
+/* styles/Layout.module.css */
+
+/* FIX: Skip link – hidden offscreen until focused by keyboard users */
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: #003d7a;
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) 0;
+  z-index: 9999;
+  transition: top 0.15s ease;
+}
+
+.skipLink:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative; /* establishes stacking context for cloud z-index */
+  z-index: 1;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+  color: #333;
+  font-family: 'Mulish', sans-serif;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .mainContent {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1rem 0.8rem;
+    font-size: 0.95rem;
+  }
+}

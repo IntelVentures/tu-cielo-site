@@ -1,0 +1,226 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Blog Page — article layout, IV2.0 pattern
+   ───────────────────────────────────────────────────────────────────────── */
+
+.blogSection {
+  padding: 4rem 2.5rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.blogWrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── Article header ── */
+.blogLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tc-blue-500);
+  margin-bottom: 1rem;
+}
+
+.articleTitle {
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin-bottom: 0.75rem;
+}
+
+.articleMeta {
+  font-size: 0.82rem;
+  color: var(--tc-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--tc-border);
+}
+
+/* ── Article body ── */
+.articleBody {
+  color: var(--tc-text-mid);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.articleBody h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  letter-spacing: -0.015em;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.articleBody h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tc-text-dark);
+  margin: 1.75rem 0 0.5rem;
+}
+
+.articleBody p {
+  margin-bottom: 1.1rem;
+}
+
+.articleBody ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.articleBody li {
+  margin-bottom: 0.4rem;
+}
+
+.articleBody strong {
+  color: var(--tc-text-dark);
+  font-weight: 700;
+}
+
+.articleBody em {
+  font-style: italic;
+  color: var(--tc-text-muted);
+}
+
+/* ── Comments ── */
+.comments {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--tc-border);
+}
+
+.commentsTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--tc-text-dark);
+  margin-bottom: 1.25rem;
+}
+
+.commentTextarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--tc-border);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--tc-text-dark);
+  background: rgba(255, 255, 255, 0.7);
+  resize: vertical;
+  transition: border-color 0.2s;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.commentTextarea:focus {
+  outline: none;
+  border-color: var(--tc-blue-500);
+}
+
+.commentSubmit {
+  background: var(--tc-blue-500);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 1.75rem;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.commentSubmit:hover {
+  background: var(--tc-blue-600);
+  transform: translateY(-1px);
+}
+
+.commentList {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.noComments {
+  font-size: 0.9rem;
+  color: var(--tc-text-muted);
+}
+
+.commentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--tc-text-mid);
+}
+
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: var(--tc-text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.deleteBtn:hover {
+  color: #c0392b;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .blogSection {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .blogWrap {
+    max-width: 100%;
+  }
+
+  .articleTitle {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .articleBody h2 {
+    font-size: 1.25rem;
+    margin: 2rem 0 0.65rem;
+  }
+
+  .articleBody h3 {
+    font-size: 1rem;
+  }
+
+  .articleBody {
+    font-size: 0.975rem;
+    line-height: 1.75;
+  }
+
+  .comments {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogSection {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .commentItem {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

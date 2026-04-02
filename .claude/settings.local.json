@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Nebula PC/Desktop/Projects/ObsidianVault/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Nebula PC\\Desktop\\Projects\\ObsidianVault\\200 Projects\\Dev\\TuCielo Website"
+    ]
+  }
+}

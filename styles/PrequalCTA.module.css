@@ -1,0 +1,198 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   PrequalCTA Section
+   CTA panel with deep blue background — contained element within a section.
+   Two-column: copy on left, steps + button on right.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.ctaSection {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── CTA panel — this is the card element, not a section wrapper ── */
+.ctaPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  background: var(--tc-blue-700);
+  border-radius: 16px;
+  padding: 4rem 4.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow overlay inside the panel */
+.ctaPanel::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(66,165,245,0.20) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Left — copy ── */
+.ctaCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tc-blue-200);
+}
+
+.headline {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 380px;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.02em;
+}
+
+/* ── Right — steps + CTA button ── */
+.ctaAction {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Step indicators */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.stepNum {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stepLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.70);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 90px;
+}
+
+.stepLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.20);
+  margin-bottom: 1.6rem;
+  max-width: 48px;
+}
+
+/* CTA button — use the tc-btn-primary from globals + override size */
+.ctaBtn {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+}
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .ctaPanel {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 2.5rem;
+  }
+
+  .subtext {
+    max-width: 100%;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .ctaPanel {
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .headline {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .step {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .stepLabel {
+    max-width: none;
+    text-align: left;
+    font-size: 0.82rem;
+  }
+
+  .stepLine {
+    display: none;
+  }
+
+  .ctaBtn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .ctaPanel {
+    padding: 2rem 1.25rem;
+  }
+
+  .stepNum {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}

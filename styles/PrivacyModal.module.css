@@ -1,0 +1,136 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Privacy Modal — frosted panel, IV2.0 consistent
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ── Backdrop ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  background: rgba(13, 27, 42, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+
+/* ── Modal panel ── */
+.panel {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--tc-border);
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(13, 27, 42, 0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header bar ── */
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--tc-border);
+  background: #1975E3;
+  flex-shrink: 0;
+}
+
+.panelTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.30);
+  transform: scale(1.1);
+}
+
+/* ── Scrollable body ── */
+.body {
+  padding: 2rem 2rem 2.5rem;
+  overflow-y: auto;
+  max-height: calc(85vh - 72px);
+  color: var(--tc-text-mid);
+  font-family: var(--font-main);
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  letter-spacing: -0.015em;
+  margin: 0 0 1rem;
+}
+
+.body h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--tc-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 1.5rem 0 0.4rem;
+}
+
+.body p {
+  margin: 0 0 0.85rem;
+}
+
+.body ul {
+  padding-left: 1.35rem;
+  margin: 0 0 0.85rem;
+}
+
+.body li {
+  margin-bottom: 0.3rem;
+}
+
+.divider {
+  height: 1px;
+  background: var(--tc-border);
+  margin: 2rem 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .overlay {
+    padding: 1rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  .panelHeader {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .body {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+}

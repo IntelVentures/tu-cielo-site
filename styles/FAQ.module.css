@@ -1,0 +1,123 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   FAQ Section — accordion layout, IV2.0 pattern
+   ───────────────────────────────────────────────────────────────────────── */
+
+.faqSection {
+  padding: 4rem 2.5rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.faqWrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.faqLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tc-blue-500);
+  margin-bottom: 1rem;
+}
+
+.faqTitle {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--tc-text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.faqSub {
+  font-size: 1.05rem;
+  color: var(--tc-text-mid);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* ── Accordion ── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--tc-border);
+}
+
+.accordionItem {
+  border-bottom: 1px solid var(--tc-border);
+}
+
+.accordionQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--tc-text-dark);
+  transition: color 0.2s;
+}
+
+.accordionQuestion:hover {
+  color: var(--tc-blue-500);
+}
+
+.accordionIcon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--tc-blue-500);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.accordionAnswer {
+  padding: 0 0 1.35rem;
+}
+
+.accordionAnswer p {
+  font-size: 0.975rem;
+  color: var(--tc-text-mid);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .faqWrap {
+    max-width: 100%;
+  }
+
+  .faqSub {
+    font-size: 0.975rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqSection {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .accordionQuestion {
+    font-size: 0.95rem;
+    padding: 1.1rem 0;
+  }
+
+  .accordionAnswer p {
+    font-size: 0.9rem;
+  }
+}
