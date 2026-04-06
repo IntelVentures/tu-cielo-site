@@ -181,19 +181,61 @@ async function handlePreQual(supabase, data, res) {
 }
 
 async function handleLoanApp(supabase, data, res) {
-  // Strip file data for now — base64 files in JSON are too large for DB columns.
-  // TODO: Upload to Supabase Storage and store URLs.
   const { reserveStudy, annualBudgetFile, ...fields } = data;
 
-  const { error } = await supabase.from("contact_submissions").insert({
-    name: `${fields.contactName || ""} (HOA Loan App)`,
+  // ── Upload files to Supabase Storage ──────────────────────────────────────
+  // Files arrive as base64 objects: { name, mimeType, data }
+  // We upload them to the "loan-documents" bucket and store the path.
+  const timestamp = Date.now();
+  let reserveStudyPath = null;
+  let annualBudgetPath = null;
+
+  if (reserveStudy?.data) {
+    const fileName = `${timestamp}-reserve-${reserveStudy.name || "study.pdf"}`;
+    const buffer = Buffer.from(reserveStudy.data, "base64");
+    const { data: uploaded, error: uploadErr } = await supabase.storage
+      .from("loan-documents")
+      .upload(fileName, buffer, {
+        contentType: reserveStudy.mimeType || "application/pdf",
+      });
+    if (!uploadErr && uploaded) {
+      reserveStudyPath = uploaded.path;
+    }
+  }
+
+  if (annualBudgetFile?.data) {
+    const fileName = `${timestamp}-budget-${annualBudgetFile.name || "budget.pdf"}`;
+    const buffer = Buffer.from(annualBudgetFile.data, "base64");
+    const { data: uploaded, error: uploadErr } = await supabase.storage
+      .from("loan-documents")
+      .upload(fileName, buffer, {
+        contentType: annualBudgetFile.mimeType || "application/pdf",
+      });
+    if (!uploadErr && uploaded) {
+      annualBudgetPath = uploaded.path;
+    }
+  }
+
+  // ── Insert into dedicated loan applications table ─────────────────────────
+  const { error } = await supabase.from("hoa_loan_applications").insert({
+    hoa_name: fields.hoaName || "",
+    community_name: emptyToNull(fields.communityName),
+    units: parseInt(fields.units, 10) || null,
+    year_built: parseInt(fields.yearBuilt, 10) || null,
+    contact_name: fields.contactName || "",
+    position: emptyToNull(fields.position),
     email: fields.email || "",
-    phone: fields.phone || "",
-    community: fields.hoaName || "",
-    city: "",
-    role: fields.position || "",
-    budget: parseFloat(fields.projectCost) || 0,
-    agreed_to_privacy: true,
+    phone: emptyToNull(fields.phone),
+    project_type: emptyToNull(fields.projectType),
+    project_cost: parseFloat(fields.projectCost) || null,
+    loan_amount: parseFloat(fields.loanAmount) || null,
+    loan_term: parseInt(fields.loanTerm, 10) || null,
+    monthly_dues: parseFloat(fields.monthlyDues) || null,
+    reserve_balance: parseFloat(fields.reserveBalance) || null,
+    annual_budget: parseFloat(fields.annualBudget) || null,
+    delinquency_rate: emptyToNull(fields.delinquencyRate),
+    reserve_study_path: reserveStudyPath,
+    annual_budget_path: annualBudgetPath,
   });
 
   if (error) {
