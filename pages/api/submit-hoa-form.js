@@ -3,6 +3,7 @@
 // Writes directly to the Portal's Supabase database.
 // Email notifications are handled by the Portal/Supabase side, not here.
 import { createAdminClient } from "../../lib/supabase-admin";
+import { sendPreQualAdminNotification, sendPreQualUserConfirmation, sendLoanAppAdminNotification } from "../../lib/email";
 
 // Convert empty/whitespace-only strings to null.
 // Databases treat "" and null differently — check constraints
@@ -172,7 +173,10 @@ async function handlePreQual(supabase, data, res) {
     return res.status(500).json({ result: "error", message: "Submission failed" });
   }
 
-  // Email notifications are handled by the Portal/Supabase ecosystem
+  // Send email notifications (fire-and-forget — don't block the response)
+  void sendPreQualAdminNotification(data, projectCode);
+  void sendPreQualUserConfirmation(data);
+
   return res.status(200).json({ result: "success" });
 }
 
@@ -196,6 +200,8 @@ async function handleLoanApp(supabase, data, res) {
     console.error("[submit-hoa-form] Loan app insert failed:", error.message);
     return res.status(500).json({ result: "error", message: "Submission failed" });
   }
+
+  void sendLoanAppAdminNotification(fields);
 
   return res.status(200).json({ result: "success" });
 }
