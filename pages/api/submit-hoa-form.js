@@ -4,6 +4,15 @@
 // Email notifications are handled by the Portal/Supabase side, not here.
 import { createAdminClient } from "../../lib/supabase-admin";
 
+// Convert empty/whitespace-only strings to null.
+// Databases treat "" and null differently — check constraints
+// only skip NULL, not empty strings. This prevents constraint violations.
+const emptyToNull = (val) => {
+  if (val === undefined || val === null) return null;
+  const trimmed = String(val).trim();
+  return trimmed === "" ? null : trimmed;
+};
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -109,12 +118,12 @@ async function handlePreQual(supabase, data, res) {
           canonical_name: normalized || data.hoa_name.toLowerCase().trim(),
           display_name: data.hoa_name,
           legal_name: data.association_name || null,
-          email: data.hoa_email || null,
-          phone: data.contact_phone || null,
-          property_address: data.property_address || null,
-          city: data.city || null,
-          state: data.state?.toUpperCase() || null,
-          zip: data.zip || null,
+          email: emptyToNull(data.hoa_email),
+          phone: emptyToNull(data.contact_phone),
+          property_address: emptyToNull(data.property_address),
+          city: emptyToNull(data.city),
+          state: emptyToNull(data.state?.toUpperCase()),
+          zip: emptyToNull(data.zip),
           units_count: parseInt(data.units_count, 10) || null,
           annual_budget: parseFloat(data.annual_budget) || null,
           professionally_managed: data.professionally_managed || null,
@@ -142,13 +151,13 @@ async function handlePreQual(supabase, data, res) {
     contact_last_name: data.contact_last_name,
     contact_title: data.contact_title,
     contact_phone: data.contact_phone,
-    property_address: data.property_address || null,
-    city: data.city || null,
-    state: data.state?.toUpperCase() || null,
-    zip: data.zip || null,
+    property_address: emptyToNull(data.property_address),
+    city: emptyToNull(data.city),
+    state: emptyToNull(data.state?.toUpperCase()),
+    zip: emptyToNull(data.zip),
     estimated_amount: parseFloat(data.estimated_amount) || null,
     units_count: parseInt(data.units_count, 10) || null,
-    delinquency_rate: data.delinquency_rate,
+    delinquency_rate: emptyToNull(data.delinquency_rate),
     disputes: data.disputes,
     annual_budget: parseFloat(data.annual_budget) || null,
     outstanding_loans: data.outstanding_loans ? parseFloat(data.outstanding_loans) : null,
