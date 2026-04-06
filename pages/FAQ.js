@@ -1,14 +1,8 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
-import { useState } from "react";
 import FAQ from "../components/faq.js";
-import PrivacyModal from "../components/PrivacyModal";
-import InsightsModal from "../components/InsightsModal";
 
 export default function FAQPage() {
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const [showInsightsModal, setShowInsightsModal] = useState(false);
-
   return (
     <Layout>
       <Head>
@@ -57,13 +51,6 @@ export default function FAQPage() {
       {/* Renders FAQ component */}
       <FAQ />
 
-      {/* Modals */}
-      {showPrivacyModal && (
-        <PrivacyModal onClose={() => setShowPrivacyModal(false)} />
-      )}
-      {showInsightsModal && (
-        <InsightsModal onClose={() => setShowInsightsModal(false)} />
-      )}
     </Layout>
   );
 }

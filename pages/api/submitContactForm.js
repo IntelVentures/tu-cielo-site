@@ -1,3 +1,7 @@
+// pages/api/submitContactForm.js
+// Writes contact form submissions to Supabase.
+import { createAdminClient } from "../../lib/supabase-admin";
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -10,32 +14,27 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Name and Email are required" });
     }
 
-    // ✅ Correct Web App URL
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbyXn-fvW8WUdqRfSZ6MDbx05-TdtijJVLsBKlQXw2WbEh1ksHN9gAztYA1zQAs6Xgjw/exec";
+    const supabase = createAdminClient();
 
-    const r = await fetch(scriptUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...body, sheetName: "Contact" }),
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: body.name,
+      email: body.email,
+      phone: body.phone || null,
+      community: body.community || null,
+      city: body.city || null,
+      role: body.role || null,
+      budget: body.budget ? Number(body.budget) : null,
+      agreed_to_privacy: body.agreedToPrivacy ?? false,
     });
 
-    const text = await r.text();
-    let result;
-
-    try {
-      result = JSON.parse(text);
-    } catch (err) {
-      console.error("Apps Script response parse error:", err, text);
-      return res.status(502).json({ error: "Invalid JSON from Apps Script", raw: text });
+    if (error) {
+      console.error("Contact form insert failed:", error.message);
+      return res.status(500).json({ error: "Submission failed" });
     }
 
-    if (result.result === "success") {
-      return res.status(200).json({ success: true });
-    } else {
-      return res.status(400).json(result);
-    }
+    return res.status(200).json({ success: true });
   } catch (err) {
-    console.error("Contact form API error:", err);
-    return res.status(500).json({ error: "Internal server error", message: err.message });
+    console.error("Contact form API error:", err?.message);
+    return res.status(500).json({ error: "Internal server error" });
   }
 }

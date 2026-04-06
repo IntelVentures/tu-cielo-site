@@ -1,14 +1,8 @@
 import Head from 'next/head';
-import Layout from '../components/Layout'; 
-import { useState } from 'react';
+import Layout from '../components/Layout';
 import ContractorProposalTool from '../components/contractor-proposal-tool.jsx';
-import PrivacyModal from '../components/PrivacyModal';
-import InsightsModal from '../components/InsightsModal';
 
 export default function CalculatorPage() {
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const [showInsightsModal, setShowInsightsModal] = useState(false);
-
   return (
     <Layout>
       <Head>
@@ -57,13 +51,6 @@ export default function CalculatorPage() {
       {/* Proposal tool */}
       <ContractorProposalTool />
 
-      {/* Modals */}
-      {showPrivacyModal && (
-        <PrivacyModal onClose={() => setShowPrivacyModal(false)} />
-      )}
-      {showInsightsModal && (
-        <InsightsModal onClose={() => setShowInsightsModal(false)} />
-      )}
     </Layout>
   );
 }

@@ -16,6 +16,8 @@ export default function AffiliateRegistration() {
   });
 
   const [isValid, setIsValid] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
     const { firstName, lastName, email, phone, company } = formData;
@@ -25,36 +27,36 @@ export default function AffiliateRegistration() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setSubmitStatus(null);
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!isValid) return;
+    e.preventDefault();
+    if (!isValid) return;
+    setSubmitStatus(null);
 
-  console.log('Form submitted:', formData);
+    try {
+      const response = await fetch('/api/affiliate-registration', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-  try {
-    const response = await fetch('/api/affiliate-registration', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+      const data = await response.json();
 
-    const data = await response.json();
-
-    if (response.ok) {
-      console.log('✅ Success:', data);
-      alert('Registration submitted successfully!');
-    } else {
-      console.error('❌ Submission error:', data.error);
-      alert('There was a problem with your registration.');
+      if (response.ok) {
+        setSubmitStatus('success');
+        setSubmitMessage('Registration submitted successfully!');
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage('There was a problem with your registration.');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+      setSubmitMessage('Network or server error.');
     }
-  } catch (err) {
-    console.error('❌ Fetch failed:', err);
-    alert('Network or server error.');
-  }
-};
+  };
 
   return (
     <div className={styles.pageContainer}>
@@ -64,6 +66,16 @@ export default function AffiliateRegistration() {
       </p>
 
       <form className={styles.registrationForm} onSubmit={handleSubmit}>
+        {submitStatus && (
+          <div role="alert" style={{
+            padding: '12px 16px', borderRadius: '8px', marginBottom: '1rem',
+            background: submitStatus === 'success' ? '#dcfce7' : '#fef2f2',
+            color: submitStatus === 'success' ? '#166534' : '#991b1b',
+            border: `1px solid ${submitStatus === 'success' ? '#bbf7d0' : '#fecaca'}`,
+          }}>
+            {submitMessage}
+          </div>
+        )}
         <div className={styles.nameRow}>
           <div className={styles.formGroup}>
             <label htmlFor="firstName">First Name*</label>

@@ -8,6 +8,7 @@ export default function TuCieloHOALoanApplication({ onClose }) {
   const [step, setStep] = useState(0);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const steps = [
     { title: "Association Information", fields: ["hoaName", "communityName", "units", "yearBuilt"] },
@@ -65,9 +66,18 @@ export default function TuCieloHOALoanApplication({ onClose }) {
     }
   };
 
+  const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25 MB
+
   const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setFiles((prev) => ({ ...prev, [name]: files[0] }));
+    const { name, files: fileList } = e.target;
+    const file = fileList[0];
+    if (file && file.size > MAX_FILE_SIZE) {
+      setSubmitError(`File "${file.name}" exceeds the 25 MB limit. Please upload a smaller file.`);
+      e.target.value = "";
+      return;
+    }
+    setSubmitError(null);
+    setFiles((prev) => ({ ...prev, [name]: file }));
   };
 
   const isStepValid = () => {
@@ -92,6 +102,7 @@ export default function TuCieloHOALoanApplication({ onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
       let reserveStudyPayload = null;
@@ -130,10 +141,10 @@ export default function TuCieloHOALoanApplication({ onClose }) {
       if (result.result === "success") {
         setSubmissionSuccess(true);
       } else {
-        alert(result.message || "Submission failed.");
+        setSubmitError(result.message || "Submission failed. Please try again.");
       }
-    } catch (err) {
-      alert("Submission error.");
+    } catch {
+      setSubmitError("A network error occurred. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -154,6 +165,15 @@ export default function TuCieloHOALoanApplication({ onClose }) {
           ) : (
             <form onSubmit={handleSubmit}>
               <h3>{steps[step].title}</h3>
+
+              {submitError && (
+                <div role="alert" style={{
+                  padding: '12px 16px', borderRadius: '8px', marginBottom: '1rem',
+                  background: '#fef2f2', color: '#991b1b', border: '1px solid #fecaca',
+                }}>
+                  {submitError}
+                </div>
+              )}
 
               {steps[step].fields.map((field) => {
                 if (field === "position") {

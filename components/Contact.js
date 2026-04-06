@@ -8,16 +8,21 @@ export default function Contact({ setShowPrivacyModal }) {
     name: '', community: '', city: '', role: '', budget: '', email: '', phone: '',
   });
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setSubmitStatus(null);
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitStatus(null);
     if (!formData.name.trim() || !formData.email.trim()) {
-      alert('Please enter both Name and Email.');
+      setSubmitStatus('error');
+      setSubmitMessage('Please enter both Name and Email.');
       return;
     }
     const payload = { ...formData, budget: Number(formData.budget) || 0, agreedToPrivacy, sheetName: 'Contact' };
@@ -30,11 +35,13 @@ export default function Contact({ setShowPrivacyModal }) {
       let data = {};
       try { data = await res.json(); } catch { /* ignore */ }
       if (!res.ok) throw new Error(data.error || 'Network error');
-      alert('Thank you! Your information has been submitted.');
+      setSubmitStatus('success');
+      setSubmitMessage('Thank you! Your information has been submitted.');
       setFormData({ name: '', community: '', city: '', role: '', budget: '', email: '', phone: '' });
       setAgreedToPrivacy(false);
     } catch {
-      alert('Error submitting form. Please try again later.');
+      setSubmitStatus('error');
+      setSubmitMessage('Error submitting form. Please try again later.');
     }
   };
 
@@ -68,6 +75,17 @@ export default function Contact({ setShowPrivacyModal }) {
           {/* Right — form, clean, no card wrapper */}
           <div className={`${styles.formWrapper} reveal`}>
             <form onSubmit={handleSubmit} className={styles.contactForm} noValidate>
+
+              {submitStatus && (
+                <div role="alert" style={{
+                  padding: '12px 16px', borderRadius: '8px', marginBottom: '1rem',
+                  background: submitStatus === 'success' ? '#dcfce7' : '#fef2f2',
+                  color: submitStatus === 'success' ? '#166534' : '#991b1b',
+                  border: `1px solid ${submitStatus === 'success' ? '#bbf7d0' : '#fecaca'}`,
+                }}>
+                  {submitMessage}
+                </div>
+              )}
 
               <div className={styles.fieldRow}>
                 <div className={styles.fieldGroup}>

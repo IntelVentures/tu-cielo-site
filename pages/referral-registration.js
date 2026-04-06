@@ -12,44 +12,49 @@ export default function ReferralRegistration() {
     referralCode: '',
     issue: ''
   });
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const isFormValid = Object.values(formData).every((value) => value.trim() !== '');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setSubmitStatus(null);
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!isFormValid) return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    setSubmitStatus(null);
 
-  try {
-    const response = await fetch('/api/referral', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch('/api/referral', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    if (!response.ok) throw new Error('Failed to submit referral');
+      if (!response.ok) throw new Error('Failed to submit referral');
 
-    alert('Thank you for submitting your referal code application! We’ll be in touch soon, we will notify the your Affiliate and a member of our team will be in touch with you as soon a possible.');
-    setFormData({
-      firstName: '',
-      lastName: '',
-      company: '',
-      title: '',
-      phone: '',
-      email: '',
-      referralCode: '',
-      issue: '',
-    });
-  } catch (error) {
-    console.error(error);
-    alert('There was a problem submitting the form. Please try again later.');
-  }
-};
-  
+      setSubmitStatus('success');
+      setSubmitMessage('Thank you for submitting your referral code application! We\'ll be in touch soon.');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        company: '',
+        title: '',
+        phone: '',
+        email: '',
+        referralCode: '',
+        issue: '',
+      });
+    } catch {
+      setSubmitStatus('error');
+      setSubmitMessage('There was a problem submitting the form. Please try again later.');
+    }
+  };
+
   return (
     <div className={styles.pageContainer}>
       <h1 className={styles.heroTitle}>Referral Registration</h1>
@@ -58,6 +63,16 @@ export default function ReferralRegistration() {
       </p>
 
       <form className={styles.registrationForm} onSubmit={handleSubmit}>
+        {submitStatus && (
+          <div role="alert" style={{
+            padding: '12px 16px', borderRadius: '8px', marginBottom: '1rem',
+            background: submitStatus === 'success' ? '#dcfce7' : '#fef2f2',
+            color: submitStatus === 'success' ? '#166534' : '#991b1b',
+            border: `1px solid ${submitStatus === 'success' ? '#bbf7d0' : '#fecaca'}`,
+          }}>
+            {submitMessage}
+          </div>
+        )}
         <div className={styles.nameRow}>
           <div className={styles.formGroup}>
             <label htmlFor="firstName">First Name</label>
