@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
     if (sheetName === "HOALoanApps") {
       // Full loan application — for now store in a dedicated table
-      // TODO: Phase 3 follow-up — handle file uploads via Supabase Storage
+      // Full loan application — files uploaded to Supabase Storage below
       return await handleLoanApp(supabase, formData, res);
     }
 

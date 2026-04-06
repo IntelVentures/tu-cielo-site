@@ -78,6 +78,18 @@
   transform: scale(1.1);
 }
 
+/* ── Error banner ── */
+.errorBanner {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 /* ── Form body ── */
 .body {
   padding: 1.75rem 1.5rem 2rem;

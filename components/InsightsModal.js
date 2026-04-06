@@ -7,6 +7,7 @@ import styles from "../styles/InsightsModal.module.css";
 export default function InsightsModal({ onClose }) {
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   // Lock body scroll while modal is open
   useEffect(() => {
@@ -54,10 +55,10 @@ export default function InsightsModal({ onClose }) {
         document.body.removeChild(link);
         onClose();
       } else {
-        alert("Error submitting form. Please try again.");
+        setErrorMsg("Error submitting form. Please try again.");
       }
     } catch {
-      alert("Something went wrong. Try again later.");
+      setErrorMsg("Something went wrong. Try again later.");
     }
   };
 
@@ -86,6 +87,9 @@ export default function InsightsModal({ onClose }) {
 
         {/* ── Form body ── */}
         <div className={styles.body}>
+          {errorMsg && (
+            <div className={styles.errorBanner} role="alert">{errorMsg}</div>
+          )}
           <p className={styles.eyebrow}>Free Resource</p>
           <h3 className={styles.headline}>10 Insights for Your HOA Loan</h3>
           <p className={styles.subtext}>
