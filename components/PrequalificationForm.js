@@ -173,7 +173,7 @@ export default function PrequalificationForm({ showForm, setShowForm }) {
               <label className={styles.fieldLabel} htmlFor="coupon_code">
                 Referral Code (if you have one)
               </label>
-              <input id="coupon_code" name="coupon_code" placeholder="e.g., JOHN-SMITH" className={styles.input} value={formData.coupon_code || ""} onChange={handleChange} onBlur={handleBlur} style={{ textTransform: "uppercase" }} />
+              <input id="coupon_code" name="coupon_code" placeholder="Input contractor issued COUPON code here" className={styles.input} value={formData.coupon_code || ""} onChange={handleChange} onBlur={handleBlur} style={{ textTransform: "uppercase" }} />
               {couponStatus === "checking" && (
                 <p style={{ fontSize: "0.85rem", color: "#64748b", marginTop: "-0.8rem", marginBottom: "1rem" }}>Verifying code...</p>
               )}
